@@ -7,9 +7,16 @@ $st: #727272;
 $dc: #B6B6B6;
 $wt: rgba(255,255,255,0.6);
 
-$pc: #FFEB3B;
-$lpc: #FFF9C4;
-$dpc: #FBC02D;
+$success: #4CAF50;
+$darksuccess: #388E3C;
+
+$failure: #F44336;
+$darkfailure: #D32F2F;
+
+$pc: #388E3C;
+$tpc: rgba(255, 235, 59, 0.5);
+$lpc: #4CAF50;
+$dpc: #2B6E2E;
 
 $sc: #03A9F4;
 $lsc: #B3E5FC;
@@ -165,7 +172,7 @@ HEADER
 header {
   width: 100%;
   height: 500px;
-  background: url("https://s3.amazonaws.com/bit-photos/large/2859534.jpeg") no-repeat top center fixed;
+  background: url("../img/moon.png") no-repeat top center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -175,8 +182,9 @@ header {
     width: 100%;
     margin: 0 auto;
     height: 45px;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    background: $pc;
     position: fixed;
+    z-index: 10;
     padding: 0 1%;
     display: flex;
     justify-content: space-between;
@@ -194,18 +202,19 @@ header {
           -webkit-transition: all .25s ease;
 
           &:hover {
-            color: $sc;
+            color: $wt;
           }
         }
       }
 
       i.fa-search {
+        cursor: pointer;
         font-size: 0.9rem;
         transition: all .25s ease;
         -webkit-transition: all .25s ease;
 
         &:hover {
-          color: $sc;
+          color: $wt;
         }
       }
     }
@@ -222,14 +231,13 @@ ARTIST
 **************************/
 
 #artist {
-  height: 1000px;
-  background-color: $lpc;
+  background-image: url('../img/white_wall.png');
 
   .artistHeadBorder {
     width: 100%;
-    height: 35px;
+    height: 5px;
     margin-bottom: 25px;
-    background-color: $dpc;
+    background-color: $pc;
     -webkit-box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
@@ -289,12 +297,24 @@ ARTIST
       }
 
       .showTicketsBlock {
+        border: none;
+        padding: 0;
         height: 250px;
         width: 25%;
+        background-color: $success;
+        transition: all .25s ease;
+        -webkit-transition: all .25s ease;
+
+        &:focus {
+          outline: none;
+        }
+
+        &:hover {
+          background-color: $darksuccess;
+        }
 
         > div {
           height: 50%;
-          background-color: #4CAF50;
           color: white;
           display: flex;
           justify-content: center;
@@ -307,6 +327,33 @@ ARTIST
 
         .ticketsAvailable {
           font-size: 2rem;
+
+          .fa-times {
+            display: none;
+          }
+        }
+      }
+
+      .showTicketsBlock.unavailable {
+        pointer-events: none;
+        background-color: $failure;
+
+        .ticketsLink {
+          text-decoration: line-through;
+          color: $dc;
+        }
+
+        .ticketsAvailable {
+          font-size: 2rem;
+          color: $dc;
+
+          .fa-times {
+            display: block;
+          }
+
+          .fa-check {
+            display: none;
+          }
         }
       }
     }
@@ -319,21 +366,21 @@ FOOTER
 
 footer {
   height: 200px;
-  background-color: $sc;
+  background-color: $pc;
   font-size: 0.5rem;
   color: white;
 
   .artistFootBorder {
     width: 100%;
     height: 35px;
-    background-color: $dsc;
+    background-color: $dpc;
     -webkit-box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
     -moz-box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
     box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
   }
 
   .footerWrapper {
-    height: 165px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;

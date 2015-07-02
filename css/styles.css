@@ -76,7 +76,7 @@ MAIN
           outline: 0; }
       #main .mainWrapper .mainInputBlock form button {
         width: 20%;
-        background-color: #FFEB3B;
+        background-color: #388E3C;
         border: 0;
         transition: all .25s ease;
         -webkit-transition: all .25s ease; }
@@ -85,7 +85,7 @@ MAIN
         #main .mainWrapper .mainInputBlock form button:focus {
           outline: 0; }
         #main .mainWrapper .mainInputBlock form button:hover {
-          background-color: #FBC02D; }
+          background-color: #2B6E2E; }
           #main .mainWrapper .mainInputBlock form button:hover i {
             transform: rotateZ(90deg); }
         #main .mainWrapper .mainInputBlock form button i {
@@ -101,7 +101,7 @@ HEADER
 header {
   width: 100%;
   height: 500px;
-  background: url("https://s3.amazonaws.com/bit-photos/large/2859534.jpeg") no-repeat top center fixed;
+  background: url("../img/moon.png") no-repeat top center fixed;
   background-size: cover;
   margin: 0;
   padding: 0;
@@ -110,8 +110,9 @@ header {
     width: 100%;
     margin: 0 auto;
     height: 45px;
-    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5));
+    background: #388E3C;
     position: fixed;
+    z-index: 10;
     padding: 0 1%;
     display: flex;
     justify-content: space-between;
@@ -125,13 +126,14 @@ header {
         transition: all .25s ease;
         -webkit-transition: all .25s ease; }
         header .headerTop .headerIconBlock a i.fa-home:hover {
-          color: #03A9F4; }
+          color: rgba(255, 255, 255, 0.6); }
       header .headerTop .headerIconBlock i.fa-search {
+        cursor: pointer;
         font-size: 0.9rem;
         transition: all .25s ease;
         -webkit-transition: all .25s ease; }
         header .headerTop .headerIconBlock i.fa-search:hover {
-          color: #03A9F4; }
+          color: rgba(255, 255, 255, 0.6); }
     header .headerTop .headerTitleBlock {
       font-family: "Roboto", sans-serif;
       font-weight: lighter; }
@@ -140,13 +142,12 @@ header {
 ARTIST
 **************************/
 #artist {
-  height: 1000px;
-  background-color: #FFF9C4; }
+  background-image: url("../img/white_wall.png"); }
   #artist .artistHeadBorder {
     width: 100%;
-    height: 35px;
+    height: 5px;
     margin-bottom: 25px;
-    background-color: #FBC02D;
+    background-color: #388E3C;
     -webkit-box-shadow: 0px 1.5px 10px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 1.5px 10px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 1.5px 10px 0px rgba(0, 0, 0, 0.75); }
@@ -191,11 +192,19 @@ ARTIST
           text-indent: 10px;
           text-align: left; }
       #artist .shows .showCard .showTicketsBlock {
+        border: none;
+        padding: 0;
         height: 250px;
-        width: 25%; }
+        width: 25%;
+        background-color: #4CAF50;
+        transition: all .25s ease;
+        -webkit-transition: all .25s ease; }
+        #artist .shows .showCard .showTicketsBlock:focus {
+          outline: none; }
+        #artist .shows .showCard .showTicketsBlock:hover {
+          background-color: #388E3C; }
         #artist .shows .showCard .showTicketsBlock > div {
           height: 50%;
-          background-color: #4CAF50;
           color: white;
           display: flex;
           justify-content: center;
@@ -204,24 +213,39 @@ ARTIST
           text-decoration: underline; }
         #artist .shows .showCard .showTicketsBlock .ticketsAvailable {
           font-size: 2rem; }
+          #artist .shows .showCard .showTicketsBlock .ticketsAvailable .fa-times {
+            display: none; }
+      #artist .shows .showCard .showTicketsBlock.unavailable {
+        pointer-events: none;
+        background-color: #F44336; }
+        #artist .shows .showCard .showTicketsBlock.unavailable .ticketsLink {
+          text-decoration: line-through;
+          color: #B6B6B6; }
+        #artist .shows .showCard .showTicketsBlock.unavailable .ticketsAvailable {
+          font-size: 2rem;
+          color: #B6B6B6; }
+          #artist .shows .showCard .showTicketsBlock.unavailable .ticketsAvailable .fa-times {
+            display: block; }
+          #artist .shows .showCard .showTicketsBlock.unavailable .ticketsAvailable .fa-check {
+            display: none; }
 
 /**************************
 FOOTER
 **************************/
 footer {
   height: 200px;
-  background-color: #03A9F4;
+  background-color: #388E3C;
   font-size: 0.5rem;
   color: white; }
   footer .artistFootBorder {
     width: 100%;
     height: 35px;
-    background-color: #0288D1;
+    background-color: #2B6E2E;
     -webkit-box-shadow: 0px 1.5px 10px 0px rgba(0, 0, 0, 0.75);
     -moz-box-shadow: 0px 1.5px 10px 0px rgba(0, 0, 0, 0.75);
     box-shadow: 0px 1.5px 10px 0px rgba(0, 0, 0, 0.75); }
   footer .footerWrapper {
-    height: 165px;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center; }
