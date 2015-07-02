@@ -1,0 +1,65 @@
+/**************************
+SASS VARIABLES
+**************************/
+
+$tb: rgba(0,0,0,0.87);
+$tw: rgba(255,255,255,0.6);
+
+$pc: #8D0707;
+$lpc: #ED0C0C;
+$dpc: #630505;
+
+$sc: #0D3C5A;
+$lsc: #1B7BB8;
+$dsc: #0D3C59;
+
+$tc: #FFD700;
+
+$sans: 'Roboto', sans-serif;
+$serif: 'Roboto Slab', serif;
+
+/**************************
+SETUP
+**************************/
+
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+a {
+  color: $sc;
+  text-decoration: underline;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $sans;
+}
+
+h1, h2, h3, h4, h5, h6, li, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style-type: none;
+}
+
+img {
+  max-width: 100%;
+}
+
+html {
+  font-size: 32px;
+  font-family: $serif;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+}
+
+#pageWrapper {
+  width: 100%;
+  margin: 0 auto;
+}

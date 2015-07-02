@@ -1,0 +1,40 @@
+/**************************
+SASS VARIABLES
+**************************/
+/**************************
+SETUP
+**************************/
+*, *:before, *:after {
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box; }
+
+a {
+  color: #0D3C5A;
+  text-decoration: underline; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Roboto", sans-serif; }
+
+h1, h2, h3, h4, h5, h6, li, ul {
+  margin: 0;
+  padding: 0; }
+
+ul {
+  list-style-type: none; }
+
+img {
+  max-width: 100%; }
+
+html {
+  font-size: 32px;
+  font-family: "Roboto Slab", serif; }
+
+html, body {
+  height: 100%;
+  width: 100%; }
+
+#pageWrapper {
+  width: 100%;
+  margin: 0 auto; }
+
+/*# sourceMappingURL=styles.css.map */
