@@ -2,18 +2,18 @@
 SASS VARIABLES
 **************************/
 
-$tb: rgba(0,0,0,0.87);
-$tw: rgba(255,255,255,0.6);
+$pt: #212121;
+$st: #727272;
+$dc: #B6B6B6;
+$wt: rgba(255,255,255,0.6);
 
-$pc: #8D0707;
-$lpc: #ED0C0C;
-$dpc: #630505;
+$pc: #FFEB3B;
+$lpc: #FFF9C4;
+$dpc: #FBC02D;
 
-$sc: #0D3C5A;
-$lsc: #1B7BB8;
-$dsc: #0D3C59;
-
-$tc: #FFD700;
+$sc: #03A9F4;
+$lsc: #B3E5FC;
+$dsc: #0288D1;
 
 $sans: 'Roboto', sans-serif;
 $serif: 'Roboto Slab', serif;
@@ -59,7 +59,287 @@ html, body {
   width: 100%;
 }
 
-#pageWrapper {
+.pageWrapper {
   width: 100%;
   margin: 0 auto;
 }
+
+/**************************
+MAIN
+**************************/
+
+#main {
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
+              url('../img/main-bg.jpg') no-repeat top center;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+
+  .mainWrapper {
+    height: 100%;
+    width: 70%;
+    // background-color: rgba(0,0,0,0.5);
+
+    > div {
+      height: 33%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .mainTitleBlock {
+
+      h1 {
+        font-size: 5rem;
+        font-weight: lighter;
+      }
+    }
+
+    .mainInputBlock {
+
+      form {
+        width: 75%;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+
+        input {
+          width: 80%;
+          border: 0;
+          text-align: center;
+          padding: 12.5px 0;
+          color: $pt;
+          font-size: 1.5rem;
+
+          &:focus {
+            outline: 0;
+          }
+        }
+
+        button {
+          width: 20%;
+          background-color: $pc;
+          border: 0;
+          transition: all .25s ease;
+          -webkit-transition: all .25s ease;
+
+          a {
+            color: white;
+          }
+
+          &:focus {
+            outline: 0;
+          }
+
+          &:hover {
+            background-color: $dpc;
+
+            i {
+              transform: rotateZ(90deg);
+            }
+          }
+
+          i {
+            transition: all .25s ease;
+            -webkit-transition: all .25s ease;
+          }
+        }
+      }
+    }
+
+    .mainCopyrightBlock {
+      font-size: 0.5rem;
+      color: $dc;
+    }
+  }
+}
+
+/**************************
+HEADER
+**************************/
+
+header {
+  width: 100%;
+  height: 500px;
+  background: url("https://s3.amazonaws.com/bit-photos/large/2859534.jpeg") no-repeat top center fixed;
+  background-size: cover;
+  margin: 0;
+  padding: 0;
+  color: white;
+
+  .headerTop {
+    width: 100%;
+    margin: 0 auto;
+    height: 45px;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    position: fixed;
+    padding: 0 1%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    .headerIconBlock {
+      display: flex;
+      align-items: center;
+
+      a {
+        i.fa-home {
+          margin-right: 10px;
+          color: white;
+          transition: all .25s ease;
+          -webkit-transition: all .25s ease;
+
+          &:hover {
+            color: $sc;
+          }
+        }
+      }
+
+      i.fa-search {
+        font-size: 0.9rem;
+        transition: all .25s ease;
+        -webkit-transition: all .25s ease;
+
+        &:hover {
+          color: $sc;
+        }
+      }
+    }
+
+    .headerTitleBlock {
+      font-family: $sans;
+      font-weight: lighter;
+    }
+  }
+}
+
+/**************************
+ARTIST
+**************************/
+
+#artist {
+  height: 1000px;
+  background-color: $lpc;
+
+  .artistHeadBorder {
+    width: 100%;
+    height: 35px;
+    margin-bottom: 25px;
+    background-color: $dpc;
+    -webkit-box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
+  }
+
+  .shows {
+    width: 95%;
+    margin: 0 auto;
+    padding-bottom: 25px;
+
+    .showCard {
+      min-height: 300px;
+      margin: 10px 0;
+      background-color: white;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+      display: flex;
+      flex-wrap: wrap;
+
+      .showTitle {
+        height: 50px;
+        width: 100%;
+        background-color: $sc;
+        color: white;
+        text-align: center;
+        padding: 5px 0;
+        border-bottom: 1px solid $dsc;
+      }
+
+      .showInfoBlock {
+        height: 250px;
+        width: 75%;
+        display: flex;
+        flex-wrap: wrap;
+        text-align: center;
+        font-size: 0.75rem;
+
+        > div {
+          display: flex;
+          align-items: center;
+        }
+
+        .showInfoKey {
+          width: 30%;
+          background-color: $dsc;
+          color: white;
+          text-decoration: underline;
+          display: flex;
+          justify-content: center;
+        }
+
+        .showInfoValue {
+          width: 70%;
+
+          text-indent: 10px;
+          text-align: left;
+        }
+      }
+
+      .showTicketsBlock {
+        height: 250px;
+        width: 25%;
+
+        > div {
+          height: 50%;
+          background-color: #4CAF50;
+          color: white;
+          display: flex;
+          justify-content: center;
+          align-items: center
+        }
+
+        .ticketsLink {
+          text-decoration: underline;
+        }
+
+        .ticketsAvailable {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}
+
+/**************************
+FOOTER
+**************************/
+
+footer {
+  height: 200px;
+  background-color: $sc;
+  font-size: 0.5rem;
+  color: white;
+
+  .artistFootBorder {
+    width: 100%;
+    height: 35px;
+    background-color: $dsc;
+    -webkit-box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 1.5px 10px 0px rgba(0,0,0,0.75);
+  }
+
+  .footerWrapper {
+    height: 165px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+/**************************
+QUERIES
+**************************/

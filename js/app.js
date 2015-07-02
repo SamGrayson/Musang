@@ -10,8 +10,8 @@ angular
        templateUrl: 'views/main.html',
        controller: 'MainController'
      })
-     .when('/artists', {
-       templateUrl: 'views/artists.html',
+     .when('/artist', {
+       templateUrl: 'views/artist.html',
        controller: 'MainController'
      })
     //  .when('/posts/:id', {
