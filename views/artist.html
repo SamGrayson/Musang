@@ -1,4 +1,4 @@
-<div class="pageWrapper">
+<div class="pageWrapper" ng-controller="MainController">
   <header>
     <div class="headerTop">
       <div class="headerIconBlock">
@@ -6,7 +6,6 @@
         <i class="fa fa-search"></i>
       </div>
       <div class="headerTitleBlock">
-        Pink Floyd
       </div>
     </div>
   </header>
@@ -15,7 +14,7 @@
     <div class="artistHeadBorder"></div>
 
     <div class="shows">
-      <div ng-include="'views/showCard.html'">
+      <div ng-include src="'views/showCard.html'">
       </div>
     </div>
   </div>
