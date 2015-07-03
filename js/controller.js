@@ -7,16 +7,18 @@
 
       $scope.artist = {}
 
-      // ShowsService.readOne($routeParams.id).succes(function(show) {
+      // ShowsService.readOne($routeParams.id).success(function(show) {
       //   $scope.show = show;
       // })
 
       $scope.clickEvent = function(obj) {
         console.log($scope.artist.name);
         $location.path('/artist' + '/' + $scope.artist.name);
-        var shows = ShowsService.read($scope.artist.name).success(function(shows) {
+        ShowsService.read($scope.artist.name).success(function(shows) {
           $scope.shows = shows;
           console.log($scope.shows);
+          var shows = shows;
+          console.log(shows);
         });
       }
 
