@@ -202,7 +202,7 @@ ARTIST
         #artist .shows .showCard .showTicketsBlock:focus {
           outline: none; }
         #artist .shows .showCard .showTicketsBlock:hover {
-          background-color: #388E3C; }
+          background-color: #3A853D; }
         #artist .shows .showCard .showTicketsBlock > div {
           height: 50%;
           color: white;

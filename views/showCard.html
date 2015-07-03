@@ -1,0 +1,44 @@
+Yo yo yo
+<div class="showCard" ng-repeat="show in $scope.shows">
+  <div class="showTitle">
+    {{show.title}}
+  </div>
+  <div class="showInfoBlock">
+    <div class="showInfoKey">
+      Venue:
+    </div>
+    <div class="showInfoValue">
+      {{show.venue.name}}
+    </div>
+    <div class="showInfoKey">
+      Location:
+    </div>
+    <div class="showInfoValue">
+      {{show.formated_location}}
+    </div>
+    <div class="showInfoKey">
+      Date:
+    </div>
+    <div class="showInfoValue">
+      {{show.datetime}}
+    </div>
+  </div>
+  <button class="showTicketsBlock" ng-if="show.ticket_status === 'available'">
+    <div class="ticketsLink">
+      Buy Tickets
+    </div>
+    <div class="ticketsAvailable">
+      <i class="fa fa-check"></i>
+      <i class="fa fa-times"></i>
+    </div>
+  </button>
+  <button class="showTicketsBlock unavailable" ng-if="show.ticket_status !== 'available'">
+    <div class="ticketsLink">
+      Buy Tickets
+    </div>
+    <div class="ticketsAvailable">
+      <i class="fa fa-check"></i>
+      <i class="fa fa-times"></i>
+    </div>
+  </button>
+</div>

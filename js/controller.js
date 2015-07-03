@@ -2,22 +2,23 @@
   'use strict';
   angular
     .module('musang')
-    .controller('MainController', function($scope, PostsService, $location, $routeParams){
-      // This first argument MUST be named $scope
+    .controller('MainController', function($scope, ShowsService, $location, $routeParams){
+      $scope.inputPlaceholder = 'Enter an artist';
 
-      // PostsService.read().success(function(posts) {
-      //   $scope.posts = posts;
-      // });
-      // PostsService.readOne($routeParams.id).success(function(post) {
-      //   $scope.post = post;
-      // });
-      // $scope.deletePost = function() {
-      //
-      // }
-      // $scope.createPost = function(newPost) {
-      //   PostsService.create(newPost);
-      // };
+      $scope.artist = {}
 
+      // ShowsService.readOne($routeParams.id).succes(function(show) {
+      //   $scope.show = show;
+      // })
+
+      $scope.clickEvent = function(obj) {
+        console.log($scope.artist.name);
+        $location.path('/artist' + '/' + $scope.artist.name);
+        var shows = ShowsService.read($scope.artist.name).success(function(shows) {
+          $scope.shows = shows;
+          console.log($scope.shows);
+        });
+      }
 
     });
 })();

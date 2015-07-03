@@ -6,10 +6,10 @@
         <h1>Musang</h1>
       </div>
       <div class="mainInputBlock">
-        <form>
-          <input id="mainInput" type="text" placeholder="Type in an artist">
-          <button id="mainSubmit" type="submit">
-            <a href="#/artist"><i class="fa fa-search"></i></a>
+        <form ng-controller="MainController">
+          <input id="mainInput" ng-model="artist.name" type="text" placeholder="{{inputPlaceholder}}">
+          <button id="mainSubmit" ng-click="clickEvent($event)" type="submit">
+            <i class="fa fa-search"></i>
           </button>
         </form>
       </div>
