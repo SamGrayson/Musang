@@ -100,12 +100,21 @@ HEADER
 **************************/
 header {
   width: 100%;
-  height: 500px;
+  height: 650px;
   background: url("../img/moon.png") no-repeat top center fixed;
   background-size: cover;
+  background-position: 50% 50%;
   margin: 0;
   padding: 0;
-  color: white; }
+  color: white;
+  text-decoration: none; }
+  header .fa-facebook {
+    margin-left: 25px;
+    margin-right: 25px;
+    color: white; }
+  header .fa-facebook:hover {
+    color: #3b5998;
+    cursor: pointer; }
   header .headerTop {
     width: 100%;
     margin: 0 auto;

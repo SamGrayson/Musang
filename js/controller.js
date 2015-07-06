@@ -17,7 +17,8 @@
       var promise = ShowsService.read($routeParams.name);
       promise.success(function(shows) {
         $scope.coverImg = shows[0].artists[0].image_url
-        $scope.artist = $routeParams.name
+        $scope.facebookLink = shows[0].artists[0].facebook_page_url
+        $scope.artist = $routeParams.name.toUpperCase()
         $scope.shows = shows
       });
 
