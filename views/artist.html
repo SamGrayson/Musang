@@ -1,12 +1,13 @@
-<div class="pageWrapper">
-  <header>
+<div class="pageWrapper" ng-controller="MainController">
+  <header ng-style="{'background-image': 'url('+coverImg+')'}">
     <div class="headerTop">
       <div class="headerIconBlock">
         <a href="#/"><i class="fa fa-home"></i></a>
         <i class="fa fa-search"></i>
       </div>
       <div class="headerTitleBlock">
-        Pink Floyd
+        {{artist}}
+        <a href={{facebookLink}}><i class="fa fa-facebook"></i></a>
       </div>
     </div>
   </header>
@@ -15,7 +16,7 @@
     <div class="artistHeadBorder"></div>
 
     <div class="shows">
-      <div ng-include="'views/showCard.html'">
+      <div ng-include src="'views/showCard.html'">
       </div>
     </div>
   </div>

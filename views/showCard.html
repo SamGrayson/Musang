@@ -1,5 +1,4 @@
-Yo yo yo
-<div class="showCard" ng-repeat="show in shows">
+<div class="showCard" ng-controller="MainController" ng-repeat="show in shows">
   <div class="showTitle">
     {{show.title}}
   </div>
@@ -20,10 +19,10 @@ Yo yo yo
       Date:
     </div>
     <div class="showInfoValue">
-      {{show.datetime}}
+      {{show.datetime | date}}
     </div>
   </div>
-  <button class="showTicketsBlock" ng-if="show.ticket_status === 'available'">
+  <a href="{{show.ticket_url}}" class="showTicketsBlock" ng-if="show.ticket_status === 'available'">
     <div class="ticketsLink">
       Buy Tickets
     </div>
@@ -31,8 +30,8 @@ Yo yo yo
       <i class="fa fa-check"></i>
       <i class="fa fa-times"></i>
     </div>
-  </button>
-  <button class="showTicketsBlock unavailable" ng-if="show.ticket_status !== 'available'">
+  </a>
+  <a class="showTicketsBlock unavailable" ng-if="show.ticket_status !== 'available'">
     <div class="ticketsLink">
       Buy Tickets
     </div>
@@ -40,5 +39,5 @@ Yo yo yo
       <i class="fa fa-check"></i>
       <i class="fa fa-times"></i>
     </div>
-  </button>
+  </a>
 </div>
