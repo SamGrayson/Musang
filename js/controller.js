@@ -14,15 +14,15 @@
       //   $scope.show = show;
       // })
 
+      var promise = ShowsService.read($routeParams.name);
+      promise.success(function(shows) {
+        $scope.coverImg = shows[0].artists[0].image_url
+        $scope.artist = $routeParams.name
+        $scope.shows = shows
+      });
+
       $scope.clickEvent = function(artist, $event) {
-        $event.stopPropagation();
-        $event.preventDefault();
-        var promise = ShowsService.read(artist.name);
-        promise.success(function(shows) {
-          $scope.shows = shows
-          console.log($scope.shows);
-          $location.path('/artist' + '/' + artist.name)
-        });
+        $location.path('/artist' + '/' + artist.name)
       }
 
     });
