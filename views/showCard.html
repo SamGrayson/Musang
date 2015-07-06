@@ -19,7 +19,7 @@
       Date:
     </div>
     <div class="showInfoValue">
-      {{show.datetime}}
+      {{show.datetime | date}}
     </div>
   </div>
   <button class="showTicketsBlock" ng-if="show.ticket_status === 'available'">
