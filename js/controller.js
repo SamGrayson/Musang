@@ -3,21 +3,26 @@
   angular
     .module('musang')
     .controller('MainController', function($scope, ShowsService, $location, $routeParams){
-      $scope.inputPlaceholder = 'Enter an artist';
+      $scope.inputPlaceholder = 'Enter an artist'
 
-      $scope.artist = {}
+      $scope.artist = {
+      }
+
+      $scope.shows = []
 
       // ShowsService.readOne($routeParams.id).succes(function(show) {
       //   $scope.show = show;
       // })
 
-      $scope.clickEvent = function(obj) {
-        console.log($scope.artist.name);
-        $location.path('/artist' + '/' + $scope.artist.name);
-        var shows = ShowsService.read($scope.artist.name).success(function(shows) {
-          $scope.shows = shows;
-          console.log($scope.shows);
-        });
+      var promise = ShowsService.read($routeParams.name);
+      promise.success(function(shows) {
+        $scope.coverImg = shows[0].artists[0].image_url
+        $scope.artist = $routeParams.name.toUpperCase()
+        $scope.shows = shows
+      });
+
+      $scope.clickEvent = function(artist, $event) {
+        $location.path('/artist' + '/' + artist.name)
       }
 
     });
