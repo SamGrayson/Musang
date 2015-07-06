@@ -8,7 +8,7 @@
       <div class="mainInputBlock">
         <form ng-controller="MainController">
           <input id="mainInput" ng-model="artist.name" type="text" placeholder="{{inputPlaceholder}}">
-          <button id="mainSubmit" ng-click="clickEvent($event)" type="submit">
+          <button id="mainSubmit" ng-click="clickEvent(artist, $event)" type="submit">
             <i class="fa fa-search"></i>
           </button>
         </form>
