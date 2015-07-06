@@ -178,6 +178,18 @@ header {
   margin: 0;
   padding: 0;
   color: white;
+  text-decoration: none;
+
+  .fa-facebook {
+    margin-left: 25px;
+    margin-right: 25px;
+    color:white;
+  }
+
+  .fa-facebook:hover {
+    color:#3b5998;
+    cursor: pointer;
+  }
 
   .headerTop {
     width: 100%;
