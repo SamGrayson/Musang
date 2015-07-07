@@ -93,20 +93,22 @@ MAIN
           -webkit-transition: all .25s ease; }
     #main .mainWrapper .mainCopyrightBlock {
       font-size: 0.5rem;
-      color: #B6B6B6; }
+      color: #B6B6B6;
+      text-align: center; }
 
 /**************************
 HEADER
 **************************/
 header {
   width: 100%;
-  height: 500px;
+  height: 650px;
   background: url("../img/moon.png") no-repeat top center fixed;
   background-size: cover;
   background-position: 50% 50%;
   margin: 0;
   padding: 0;
-  color: white; }
+  color: white;
+  text-decoration: none; }
   header .headerTop {
     width: 100%;
     margin: 0 auto;
@@ -138,6 +140,15 @@ header {
     header .headerTop .headerTitleBlock {
       font-family: "Roboto", sans-serif;
       font-weight: lighter; }
+      header .headerTop .headerTitleBlock .fa-facebook {
+        margin-left: 12.5px;
+        margin-right: 12.5px;
+        color: white;
+        transition: all .25s ease;
+        -webkit-transition: all .25s ease; }
+        header .headerTop .headerTitleBlock .fa-facebook:hover {
+          color: #3b5998;
+          cursor: pointer; }
 
 /**************************
 ARTIST
@@ -190,10 +201,12 @@ ARTIST
           justify-content: center; }
         #artist .shows .showCard .showInfoBlock .showInfoValue {
           width: 70%;
-          text-indent: 10px;
+          padding-left: 10px;
           text-align: left; }
       #artist .shows .showCard .showTicketsBlock {
         border: none;
+        cursor: pointer;
+        text-decoration: none;
         padding: 0;
         height: 250px;
         width: 25%;
@@ -211,7 +224,8 @@ ARTIST
           justify-content: center;
           align-items: center; }
         #artist .shows .showCard .showTicketsBlock .ticketsLink {
-          text-decoration: underline; }
+          text-decoration: underline;
+          text-align: center; }
         #artist .shows .showCard .showTicketsBlock .ticketsAvailable {
           font-size: 2rem; }
           #artist .shows .showCard .showTicketsBlock .ticketsAvailable .fa-times {
@@ -238,21 +252,66 @@ footer {
   background-color: #388E3C;
   font-size: 0.5rem;
   color: white; }
-  footer .artistFootBorder {
-    width: 100%;
-    height: 35px;
-    background-color: #2B6E2E;
-    -webkit-box-shadow: 0px 1.5px 10px 0px rgba(0, 0, 0, 0.75);
-    -moz-box-shadow: 0px 1.5px 10px 0px rgba(0, 0, 0, 0.75);
-    box-shadow: 0px 1.5px 10px 0px rgba(0, 0, 0, 0.75); }
   footer .footerWrapper {
     height: 200px;
     display: flex;
+    text-align: center;
     justify-content: center;
     align-items: center; }
 
 /**************************
 QUERIES
 **************************/
+@media screen and (max-width: 950px) {
+  #main .mainWrapper {
+    width: 100%; } }
+@media screen and (max-width: 650px) {
+  #main .mainWrapper .mainTitleBlock h1 {
+    font-size: 3rem; }
+  #main .mainWrapper .mainInputBlock form input {
+    font-size: 0.75rem;
+    padding: 2.5px; }
+  #main .mainWrapper .mainCopyrightBlock {
+    font-size: 0.4rem; }
+
+  #artist .shows .showCard {
+    min-height: auto;
+    margin: 50px 0; }
+    #artist .shows .showCard .showTitle {
+      height: auto;
+      font-size: 0.75rem; }
+    #artist .shows .showCard .showInfoBlock {
+      flex-direction: column;
+      height: auto;
+      width: 100%; }
+      #artist .shows .showCard .showInfoBlock .showInfoKey,
+      #artist .shows .showCard .showInfoBlock .showInfoValue {
+        width: 100%;
+        text-align: left;
+        padding: 5px 0px 5px 10px;
+        justify-content: flex-start; }
+    #artist .shows .showCard .showTicketsBlock {
+      height: auto;
+      width: 100%;
+      padding: 15px 0;
+      display: flex; }
+      #artist .shows .showCard .showTicketsBlock > div {
+        height: auto;
+        width: 100%; }
+      #artist .shows .showCard .showTicketsBlock .ticketsAvailable {
+        display: none; }
+
+  footer .footerWrapper {
+    font-size: 0.35rem; } }
+@media screen and (max-width: 400px) {
+  #main .mainWrapper .mainTitleBlock h1 {
+    font-size: 2rem; }
+  #main .mainWrapper .mainInputBlock form {
+    width: 98%; }
+    #main .mainWrapper .mainInputBlock form input {
+      font-size: 0.75rem;
+      padding: 2.5px; }
+  #main .mainWrapper .mainCopyrightBlock {
+    font-size: 0.3rem; } }
 
 /*# sourceMappingURL=styles.css.map */

@@ -4,25 +4,25 @@
   </div>
   <div class="showInfoBlock">
     <div class="showInfoKey">
-      Venue:
+      Venue
     </div>
     <div class="showInfoValue">
       {{show.venue.name}}
     </div>
     <div class="showInfoKey">
-      Location:
+      Location
     </div>
     <div class="showInfoValue">
       {{show.formatted_location}}
     </div>
     <div class="showInfoKey">
-      Date:
+      Date
     </div>
     <div class="showInfoValue">
       {{show.datetime | date}}
     </div>
   </div>
-  <button class="showTicketsBlock" ng-if="show.ticket_status === 'available'">
+  <a href="{{show.ticket_url}}" target="_blank" class="showTicketsBlock" ng-if="show.ticket_status === 'available'">
     <div class="ticketsLink">
       Buy Tickets
     </div>
@@ -30,8 +30,8 @@
       <i class="fa fa-check"></i>
       <i class="fa fa-times"></i>
     </div>
-  </button>
-  <button class="showTicketsBlock unavailable" ng-if="show.ticket_status !== 'available'">
+  </a>
+  <a class="showTicketsBlock unavailable" ng-if="show.ticket_status !== 'available'">
     <div class="ticketsLink">
       Buy Tickets
     </div>
@@ -39,5 +39,5 @@
       <i class="fa fa-check"></i>
       <i class="fa fa-times"></i>
     </div>
-  </button>
+  </a>
 </div>

@@ -6,15 +6,15 @@
         <h1>Musang</h1>
       </div>
       <div class="mainInputBlock">
-        <form ng-controller="MainController">
-          <input id="mainInput" ng-model="artist.name" type="text" ng-change="loadEvent(artist)" placeholder="{{inputPlaceholder}}">
+        <form ng-controller="HomeController">
+          <input id="mainInput" ng-model="artist.name" type="text" placeholder="{{inputPlaceholder}}">
           <button id="mainSubmit" ng-click="clickEvent(artist, $event)" type="submit">
             <i class="fa fa-search"></i>
           </button>
         </form>
       </div>
       <div class="mainCopyrightBlock">
-        <i class="fa fa-copyright"></i> 2015 Clayton Kinder & Samuel Grayson, All Rights Reserved
+        &copy; 2015 Clayton Kinder & Samuel Grayson, All Rights Reserved
       </div>
     </div>
   </div>

@@ -8,7 +8,6 @@
       function getShows(artist) {
         return $http.jsonp(url + '/' + artist + url2 + '&callback=JSON_CALLBACK');
       }
-
       return {
         read : getShows
       }
