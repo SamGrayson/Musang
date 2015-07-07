@@ -5,7 +5,9 @@
     .controller('HomeController', function($scope, ShowsService, $location, $routeParams){
       $scope.inputPlaceholder = 'Enter an artist'
 
-      $scope.artist = {}
+      $scope.artist = {
+        name: ""
+      }
 
       $scope.shows = []
 
@@ -14,7 +16,9 @@
       // })
 
       $scope.clickEvent = function(artist, $event) {
-        $location.path('/artist' + '/' + artist.name)
+        if (artist.name.length > 0) {
+          $location.path('/artist' + '/' + artist.name)
+        }
       }
 
     });
