@@ -8,7 +8,7 @@ angular
     $routeProvider
      .when('/', {
        templateUrl: 'views/main.html',
-       controller: 'MainController'
+       controller: 'HomeController'
      })
      .when('/artist/:name', {
        templateUrl: 'views/artist.html',
