@@ -2,9 +2,9 @@
   <header ng-style="{'background-image': 'url('+coverImg+')'}">
     <div class="headerTop">
       <div class="headerIconBlock">
-        <a href="#/"><i class="fa fa-home"></i></a>
+        <a href="#/"><i ng-controller= "HomeController" class="fa fa-home"></i></a>
       </div>
-      <div class="headerTitleBlock">
+      <div class="headerTitleBlock" ng-controller="MainController">
         {{artist}}
         <a href={{facebookLink}} target="_blank"><i class="fa fa-facebook"></i></a>
       </div>
